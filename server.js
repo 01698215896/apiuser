@@ -54,8 +54,10 @@ app.get("/users/:id", async (req, res) => {
 // update users
 app.put("/users/:id", async (req, res) => {
   try {
+    
     const id = req.params.id;
-    const users = await User.findByIdAndUpdate(id, req.body);
+    const user = await User.findOne({id : id});
+    const users = await User.findByIdAndUpdate(user, req.body);
     if (!users) {
       res.status(404).json({ message: `khong tim thay ${id}` });
     } else {
@@ -71,7 +73,9 @@ app.put("/users/:id", async (req, res) => {
 app.delete("/users/:id", async (req, res) => {
   try {
     const id = req.params.id;
-    const users = await User.findByIdAndDelete(id, req.body);
+    const user = await User.findOne({id : id});
+    
+    const users = await User.findByIdAndDelete(user, req.body);
     if (!users) {
       res.status(404).json({ message: `khong tim thay ${id}` });
     } else {
