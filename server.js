@@ -42,7 +42,7 @@ app.get("/users", async (req, res) => {
 // get User id
 app.get("/users/:id", async (req, res) => {
   try {
-
+    const id = req.params.id;
     const users = await User.findOne({id : id});
     res.status(200).json(users);
   } catch (err) {
