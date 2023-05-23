@@ -13,6 +13,9 @@ const listUser = mongoose.Schema({
   username: {
     type: String,
   },
+  email: {
+    type: String,
+  },
   password: {
     type: String,
   },
@@ -28,7 +31,13 @@ const listUser = mongoose.Schema({
   youtube: {
     type: String,
   },
+  img: {
+    type: String,
+  },
   insta: {
+    type: String,
+  },
+  music: {
     type: String,
   },
 });
