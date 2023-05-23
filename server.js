@@ -45,17 +45,15 @@ app.get("/users/:id", async (req, res) => {
 });
 
 // update users
-
 app.put("/users/:id", async (req, res) => {
   try {
     const id = req.params.id;
     const users = await User.findByIdAndUpdate(id, req.body);
     if (!users) {
-      req.status(404).json({ message: `khong tim thay ${id}` });
+      res.status(404).json({ message: `khong tim thay ${id}` });
+    } else {
+      res.status(200).json(users);
     }
-    res.send({ message: `update ${id} successfully` });
-
-    res.status(200).json(users);
   } catch (err) {
     console.log(err.message);
     res.status(500).json({ message: err.message });
@@ -68,10 +66,10 @@ app.delete("/users/:id", async (req, res) => {
     const id = req.params.id;
     const users = await User.findByIdAndDelete(id, req.body);
     if (!users) {
-      req.status(404).json({ message: `khong tim thay ${id}` });
+      res.status(404).json({ message: `khong tim thay ${id}` });
+    } else {
+      res.status(200).json(users);
     }
-    res.send({ message: `delete ${id} successfully` });
-    res.status(200).json(users);
   } catch (err) {
     console.log(err.message);
     res.status(500).json({ message: err.message });
@@ -84,6 +82,4 @@ mongoose.connect(process.env.MONGODB_URI).then(() => {
   app.listen(port, (req, res) => {
     console.log(`listening on port ${port}`);
   });
-
-
 });
