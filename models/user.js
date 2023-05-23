@@ -13,6 +13,21 @@ const listUser = mongoose.Schema({
     password: {
         type: String,
     },
+    face: {
+        type: String,
+      },
+      git: {
+        type: String,
+      },
+      twitter: {
+        type: String,
+      },
+      youtube: {
+        type: String,
+      },
+      insta: {
+        type: String,
+      },
 })
 
 const user = mongoose.model("users", listUser)
