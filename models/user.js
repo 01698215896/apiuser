@@ -22,6 +22,9 @@ const listUser = mongoose.Schema({
   face: {
     type: String,
   },
+  img: {
+    type: String,
+  },
   git: {
     type: String,
   },
@@ -39,6 +42,17 @@ const listUser = mongoose.Schema({
   },
   music: {
     type: String,
+  },
+  listmusic: {
+    type: [
+      {
+        id: String,
+        img: String,
+        name: String,
+        casy: String,
+        url: String,
+      },
+    ],
   },
 });
 

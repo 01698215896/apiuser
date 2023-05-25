@@ -4,7 +4,9 @@ const mongoose = require("mongoose");
 const User = require("./models/user");
 const app = express();
 app.use((req, res, next) => {
+  // dev server
   // res.setHeader("Access-Control-Allow-Origin", "http://localhost:4200");
+  // push github
   res.setHeader("Access-Control-Allow-Origin", "https://01698215896.github.io");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
