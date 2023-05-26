@@ -22,9 +22,6 @@ const listUser = mongoose.Schema({
   face: {
     type: String,
   },
-  img: {
-    type: String,
-  },
   git: {
     type: String,
   },
