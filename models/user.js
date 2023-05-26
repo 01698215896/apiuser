@@ -48,6 +48,8 @@ const listUser = mongoose.Schema({
         name: String,
         casy: String,
         url: String,
+        title: String,
+        
       },
     ],
   },
