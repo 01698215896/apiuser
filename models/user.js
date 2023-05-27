@@ -44,6 +44,7 @@ const listUser = mongoose.Schema({
     type: [
       {
         id: String,
+        time: String,
         img: String,
         name: String,
         casy: String,
